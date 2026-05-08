@@ -1,11 +1,10 @@
-﻿# Module Name: [e.g., Surgery Optimization System]
-## Project: [Hospital ERP / MediChain]
-**Module Code:** [e.g., SURG-05]
-
+﻿# Module Name: Pharmacy Logistics & MAR 
+## Project: Hospital ERP
+Module Code: PHM-LOG
 ---
 
 ## 📝 Module Overview
-Provide a brief description of what this module does based on the project text. (e.g., This module manages operating room schedules and prevents booking conflicts).
+This module manages pharmacy medication dispensing to ensure patient safety. It automatically deducts medications from inventory when dispensed, prevents dispensing if the patient has allergies or drug interactions, checks for sufficient stock, and sends billing information to the financial system.
 
 ---
 
@@ -14,12 +13,12 @@ Provide a brief description of what this module does based on the project text. 
 
 | Member Name | Primary Responsibility | Assigned Tasks (Examples) | GitHub Profile |
 | :--- | :--- | :--- | :--- |
-| **Student 1 (Leader)** | Integration & Architecture | Component Diagrams, API Specs, Team Coordination | [Link] |
-| **Student 2** | Requirements & Analysis | Functional Requirements, Use Case Diagrams | [Link] |
-| **Student 3** | Process Modeling | Activity Diagrams, Business Rules Validation | [Link] |
-| **Student 4** | Data Design | ERD, Database Schema, Class Diagrams | [Link] |
-| **Student 5 (Optional)** | Interaction Design | Sequence Diagrams, Logic Flow | [Link] |
-| **Student 6 (Optional)** | UI/UX & Frontend | Wireframes, Interface Logic, User Stories | [Link] |
+| **shahd ibraheem (Leader)** | Integration & Architecture | Component Diagrams, API Specs, Team Coordination | [https://github.com/shahd-ibraheem] |
+| **asmaa machal** | Requirements & Analysis | Functional Requirements, Use Case Diagrams | [https://github.com/AsmaaMachal2004] |
+| **seidra zedan** | Process Modeling | Activity Diagrams, Business Rules Validation | [https://github.com/siedra-ziedan] |
+| **ghaidaa machal** | Data Design | ERD, Database Schema, Class Diagrams | [https://github.com/GhaidaaMachal2005] |
+| **lama izz aldeen** | Interaction Design | Sequence Diagrams, Logic Flow | [https://github.com/Lamaizzaldeen] |
+| **miray daher** | UI/UX & Frontend | Wireframes, Interface Logic, User Stories | [https://github.com/miray-daher] |
 
 ---
 
@@ -34,11 +33,23 @@ Provide a brief description of what this module does based on the project text. 
 
 ## 🔗 Integration Points
 *How this module communicates with others:*
-* **Inbound:** Data received from [Module Name].
-* **Outbound:** Data sent to [Module Name].
+
+###  Inbound (Data Received)
+| Source Module | Data Description |
+| ADM-MC (Admission & Medical Coding) | Unified patient record (National ID, digital ID, blood type), Risk profile (allergies, chronic diseases) |
+
+
+###  Outbound (Data Sent)
+| Destination Module | Data Description |
+| FIN-INS (Finance & Insurance) | Medication cost + Patient ID + Dispensing date + Transaction ID |
+| SEC-GOV (Data Security & Governance) | Dispensing log (who, when, what, patient) |
+
+###  Internal (Inventory Check)
+- Stock availability check before dispensing
+- Automatic stock deduction after dispensing
 
 ---
 ## 🛠 Tools Used
-* **Modeling:** e.g., StarUML / Lucidchart.
-* **Documentation:** Markdown / LaTeX.
+* **Modeling:** e.g., StarUML / Draw.io.
+* **Documentation:** Word / GitHup(README.md).
 * **Version Control:** GitHub.
