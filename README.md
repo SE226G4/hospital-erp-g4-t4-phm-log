@@ -15,8 +15,8 @@ This module manages pharmacy medication dispensing to ensure patient safety. It 
 | :--- | :--- | :--- | :--- |
 | **shahd ibraheem (Leader)** | Integration & Architecture | Component Diagrams, API Specs, Team Coordination | [https://github.com/shahd-ibraheem] |
 | **asmaa machal** | Requirements & Analysis | Functional Requirements, Use Case Diagrams | [https://github.com/AsmaaMachal2004] |
-| **seidra zedan** | Process Modeling | Activity Diagrams, Business Rules Validation | [https://github.com/siedra-ziedan] |
-| **ghaidaa machal** | Data Design | ERD, Database Schema, Class Diagrams | [https://github.com/GhaidaaMachal2005] |
+| **ghaidaa machal** | Process Modeling | Activity Diagrams, Business Rules Validation | [https://github.com/GhaidaaMachal2005] |
+| **seidra zedan** | Data Design | ERD, Database Schema, Class Diagrams | [https://github.com/siedra-ziedan] |
 | **lama izz aldeen** | Interaction Design | Sequence Diagrams, Logic Flow | [https://github.com/Lamaizzaldeen] |
 | **miray daher** | UI/UX & Frontend | Wireframes, Interface Logic, User Stories | [https://github.com/miray-daher] |
 
