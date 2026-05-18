@@ -24,9 +24,9 @@ This module manages pharmacy medication dispensing to ensure patient safety. It 
 
 ## 🚀 Analysis & Design Progress
 - [ ] **Requirement Elicitation:** Completed list of FRs/NFRs.
-- [ ] **UML Behavioral Diagrams:** Use Case and Activity Diagrams.
-- [ ] **UML Structural Diagrams:** ERD and Class Diagrams.
-- [ ] **Dynamic Modeling:** Sequence Diagrams for core processes.
+- [x] **UML Behavioral Diagrams:** Use Case and Activity Diagrams.
+- [x] **UML Structural Diagrams:** ERD and Class Diagrams.
+- [x] **Dynamic Modeling:** Sequence Diagrams for core processes.
 - [ ] **Interface Design:** Low-fidelity Wireframes.
 
 ---
