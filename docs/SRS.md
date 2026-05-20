@@ -142,6 +142,7 @@ The subsystem manages structural entities including DrugItem, StockLedger, Dispe
 * 1- ERD [Entity_Relationship_Diagram](https://drive.google.com/file/d/1TyI8rrRpJfXZMJcAsVg8CS-2iefUVVH2/view?usp=sharing)
 * 2- Class diagram [Class_Diagram](https://drive.google.com/file/d/1vSGnf0jOWZXRykZoZu9CGO8NCvCxL3bA/view?usp=sharing)
 * 3- Sequence diagram [Sequence_Diagram](https://drive.google.com/file/d/14zgPyvjjMNqEp_h8Hj1dgmm8RTGVCUIO/view?usp=drivesdk)
+* 4- UseCase Diagram [UseCase_Diagram](https://drive.google.com/file/d/1iP0OeoImrvcAbfynnFjGfS3f3qDuGUEE/view?usp=drivesdk)
 
 ### Appendix B: GitHub Traceability Checklist
 * [x] Every User Story in Section 3.2 has a corresponding GitHub Issue (#101 through #108).
