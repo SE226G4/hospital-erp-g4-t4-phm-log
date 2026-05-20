@@ -1,54 +1,75 @@
 ﻿# Software Requirements Specification (SRS)
-## Project: [Insert the Parent System Name, e.g., Hospital ERP System]
-## Module/Subsystem: [Insert Your Module Name, e.g., Laboratory Management, Clinical System, OR "Master Integration System" if you are the integration team]
+## Project: [Hospital Enterprise Resource Planning (Hospital ERP) System]
+## Module/Subsystem: [Pharmacy Logistics and Dispensing Audit Subsystem (Module 4)]
 **Version:** 1.0  
-**Date:** [YYYY-MM-DD]
+**Date:** [2026-05-20]
 
 ---
 
 ## 1. Introduction
 ### 1.1 Purpose
-* **Instruction:** Describe the specific purpose of this document. Who is the intended audience? If you are a subsystem team, explain how this document defines your specific module. If you are the Integration Team (Team Leaders), explain how this document governs the entire system.
+The purpose of this document is to specify the comprehensive functional and non-functional requirements for the Pharmacy Logistics and Dispensing Audit Subsystem (PHM-LOG). The intended audience includes software developers, database administrators, quality assurance engineers, and the hospital integration management team. For this subsystem team, this document establishes the precise behavioral logic, validation rules, and integration contracts governing safe medication dispensing.
 
 ### 1.2 Scope
-* **Instruction:** Define the boundaries of your system. 
-  * What are the core goals and benefits?
-  * **Crucial:** Explicitly list what your system *will* do and what it *will NOT* do to prevent overlap with other teams.
+This subsystem manages the clinical validation, real-time stock control, and audit tracking of the medication dispensing workflow. 
+* What the system WILL do:
+    * Validate patient identity digitally through national ID integration with the Admission System (Module 1).
+    * Automate real-time clinical verification by cross-referencing requested medications against patient allergies and medical risks fetched from the Unified Patient Record (Module 1).
+    * Perform real-time physical inventory validation and auto-deduction upon successful dispensing.
+    * Enforce drug expiration date checks to block out-of-date stock.
+    * Log immutable dispensing records into the Medication Administration Record (MAR) audit trail.
+    * Automatically transmit financial cost structures to the Billing and Financial System (Module 2).
+    * Trigger automated electronic restock requests to the Central Warehouse (Module 7).
+* What the system WILL NOT do:
+    * It will not allow manual modification of patient clinical risk files (handled exclusively by Module 1).
+    * It will not process direct financial payments or manage insurance claims (handled exclusively by Module 2).
+    * It will not manage procurement contracts or physical tracking inside the Central Warehouse (handled exclusively by Module 7).
 
 ### 1.3 Definitions, Acronyms, and Abbreviations
-* **Instruction:** Provide a table defining all technical terms, acronyms, or domain-specific language (e.g., medical terms, API, ERP) used in this document so all teams share a common understanding.
+| Term/Acronym | Definition |
+| :--- | :--- |
+| ERP | Enterprise Resource Planning. |
+| SRS | Software Requirements Specification. |
+| MAR | Medication Administration Record. |
+| PHM-LOG | Pharmacy Health Management - Logistics and Auditing. |
 
 ### 1.4 References
-* **Instruction:** List all referenced documents. This must include:
-  * IEEE 830 Standard.
-  * Links to shared architectural documents or API contracts agreed upon with the Integration Team.
+* IEEE 830-1998 Standard for Software Requirements Specifications.
+* Master Architectural Integration Framework Contract – Shared API Contracts between Modules 1, 2, 4, and 7.
 
 ### 1.5 Overview
-* **Instruction:** Briefly explain how the rest of this SRS document is organized.
+This SRS is organized into four main sections: Section 1 outlines the organizational parameters and subsystem scope; Section 2 offers a high-level operational perspective, user attributes, and core constraints; Section 3 delivers detailed technical specifications written as Agile User Stories tied to Acceptance Criteria; Section 4 contains architectural diagrams and structural traceability checklists.
 
 ---
 
 ## 2. Overall Description
 ### 2.1 Product Perspective
-* **Instruction:** Explain how your software fits into the bigger picture. 
-  * **For Subsystem Teams:** State clearly that your module is a component of a larger system. How does it interact with the master database or other modules?
-  * **For the Integration Team:** Provide the high-level block diagram showing all subsystems and their connection points.
+The Pharmacy Logistics and Dispensing Audit Subsystem is a core module within the larger Hospital ERP ecosystem. It acts as an intermediary clinical and logistical validation engine. It does not operate in isolation; it dynamically consumes web services exposed by the Admission/Risk system and feeds real-time transactional data down to the Financial and Inventory frameworks.
 
-*   **2.1.1 System Interfaces:** [List the exact integration points and APIs your module exposes to, or consumes from, other teams].
-*   **2.1.2 User Interfaces:** [Describe the logical characteristics of your UI. Are you following a shared design system?].
-*   **2.1.3 Hardware Interfaces:** [List any required hardware, e.g., barcode scanners for labs, or state "None"].
-*   **2.1.4 Software Interfaces:** [Specify OS requirements, database dependencies, or third-party libraries].
-*   **2.1.5 Communications Interfaces:** [Define networking protocols used, e.g., HTTP/REST, WebSockets].
-*   **2.1.6 Memory & Operational Constraints:** [State minimum RAM, storage, and normal operating assumptions].
+*   **2.1.1 System Interfaces:**  Consumes Restful JSON APIs from Module 1 (/api/patient/validate and /api/patient/risk-profile). Exposes transactional billing hooks to Module 2 (/api/finance/charge-item). Emits supply-chain triggers to Module 7 (/api/warehouse/restock).
+*   **2.1.2 User Interfaces:** A web-based desktop application optimized for pharmacy hardware layout, complying with the unified hospital ERP typography and color schema.
+*   **2.1.3 Hardware Interfaces:** Integrated with peripheral USB barcode scanners for instant drug serialization and batch identification.
+*   **2.1.4 Software Interfaces:** Deployed on cross-platform .NET 8.0/9.0 runtime environments with an underlying enterprise relational database schema.
+*   **2.1.5 Communications Interfaces:**  All inter-module communication is conducted via HTTP/REST utilizing TLS 1.3 security protocols.
+*   **2.1.6 Memory & Operational Constraints:** Minimum 8GB RAM local workstation deployment; transaction payload execution requires a state persistence window under high database concurrency.
 
 ### 2.2 Product Functions
-* **Instruction:** Provide a high-level, bulleted summary of the major functions your software performs. Do not go into deep detail here (save it for Section 3).
+* Digital National ID lookup and validation.
+* Automated clinical risk profile ingestion.
+* Drug-allergy interaction cross-matching.
+* Physical stock volume and expiry verification.
+* Real-time stock ledger auto-deduction.
+* Immutable audit logging (MAR).
+* Automated financial billing transmission.
+* Automated low-stock threshold alert and restock routing.
 
 ### 2.3 User Characteristics
-* **Instruction:** Who will use your specific module? (e.g., Lab Technicians, Doctors, System Admins). Describe their technical expertise level.
+* Hospital Pharmacists: Highly trained medical professionals with moderate technical capability. They require an efficient interface that emphasizes clinical safety warnings and eliminates redundant data input.
 
 ### 2.4 Constraints, Assumptions, and Dependencies
-* **Instruction:** List any factors that limit your development (e.g., medical data privacy laws, reliance on another team finishing their API first, specific coding languages mandated).
+* Regulatory Constraint: Medical data privacy standards mandate 0% compromise on medical records encryption.
+* Technical Dependency: The module assumes constant network availability of Module 1's Risk Database. If Module 1 is down, a secure local fail-safe read-only cache must prevent complete operational blackout.
+* Critical Assumption: Patient risk logs and allergies are accurately updated by the clinical team in Module 1 prior to pharmacy arrivals.
 
 ---
 
@@ -61,37 +82,66 @@
 ### 3.2 System Features & User Stories
 * **Instruction:** Organize your requirements by Feature. For each feature, write the underlying requirements as User Stories and link them to your GitHub Issues.
 
-#### 3.2.1 Feature: [Insert Feature Name, e.g., Patient Registration]
-*   **Description:** [Briefly describe the feature].
-*   **Priority:** [High / Medium / Low].
-*   **User Stories:**
-    *   **Story 1:** As a [User Role], I want to [Action/Goal] so that [Benefit/Value]. 
-        * *Acceptance Criteria:* [List what must be true for this to be considered 'Done'].
-        * *GitHub Issue:* [Link to Issue, e.g., #12]
-    *   **Story 2:** As a [User Role], I want to [Action/Goal] so that [Benefit/Value].
-        * *Acceptance Criteria:* [List criteria].
-        * *GitHub Issue:* [Link to Issue, e.g., #13]
+#### 3.2.1 Feature: [Digital Identity and Clinical Risk Validation]
+* Description: Validates patient credentials and checks clinical risk parameters prior to dispensing.
+* Priority: High.
+* User Stories:
+    * Story 1 (FR1 & FR2): As a pharmacist, I want to search for a patient using their National ID so that I can automatically pull up their digital identity and load their clinical risk profile from Module 1.
+        * *Acceptance Criteria:* The system must display patient name and risk profile within 2 seconds of entering a valid National ID. It must block further processing if the ID is invalid.
+        * *GitHub Issue:* #101
+    * Story 2 (FR3 & FR4): As a pharmacist, I want the system to automatically cross-match the chemical components of the requested medication against the patient's registered allergy profile so that I am prevented from dispensing dangerous contraindications.
+        * *Acceptance Criteria:* If a conflict is discovered, the system must trigger a distinct hard-block screen alert, display the conflict detail, and physically disable the "Approve Dispense" button. Safety margin error tolerance is exactly 0%.
+        * *GitHub Issue:* #102
 
-#### 3.2.2 Feature: [Insert Feature Name]
-*   [Repeat the structure above for all module features].
+#### 3.2.2 Feature: [Real-time Stock Control and Expiry Management]
+* Description: Governs inventory integrity, checks batch parameters, and executes stock movements.
+* Priority: High.
+* User Stories:
+    * Story 1 (FR5 & FR7): As a pharmacist, I want the system to verify local stock availability before processing a request so that I can be blocked from issuing orders that exceed physical shelf capacity.
+  * *Acceptance Criteria:* The system must check current stock quantities. If requested amount > available shelf stock, it must halt execution and throw a "Stock Insufficient" warning.
+        * *GitHub Issue:* #103
+    * Story 2 (FR6): As a pharmacist, I want the system to execute an immediate, real-time stock deduction upon confirming a transaction so that inventory visibility remains accurate across the hospital.
+  * *Acceptance Criteria:* Local stock ledgers must deduct quantities instantaneously on commit.
+        * *GitHub Issue:* #104
+    * Story 3 (FR11): As a pharmacist, I want the system to check the batch expiration date of the selected medicine container so that I am blocked from issuing expired materials.
+  * *Acceptance Criteria:* System must block transaction if current date >= drug expiration date recorded in database, displaying an "Expired Stock" error code.
+        * *GitHub Issue:* #105
 
+#### 3.2.2 Feature: [Integration and Transaction Auditing]
+* Description: Manages downstream data synchronization and auditing logs.
+* Priority: High.
+* User Stories:
+    * Story 1 (FR8): As a hospital administrator, I want every completed dispensing transaction to be immutably tied to the patient's record, including time stamps and pharmacist credentials, so that we retain an unalterable audit trail.
+        * *Acceptance Criteria:* Write a non-modifiable entry into the MAR database partition upon transaction commitment.
+        * *GitHub Issue:* #106
+    * Story 2 (FR9): As a financial officer, I want the system to automatically calculate and push transaction costs to Module 2 so that patient billing updates transparently.
+        * *Acceptance Criteria:* An asynchronous event must securely post cost payloads to Module 2 APIs immediately upon dispensing completion.
+        * *GitHub Issue:* #107
+    * Story 3 (FR10): As a pharmacy inventory manager, I want the system to automatically submit a restock requisition to the central warehouse (Module 7) when stock falls below minimum reorder marks.
+        * *Acceptance Criteria:* When local shelf count reaches its designated minimum safety threshold, an automated replenishment ticket must be generated and piped to Module 7.
+        * *GitHub Issue:* #108
+     
+ 
 ### 3.3 Performance Requirements
-* **Instruction:** Specify quantitative limits. (e.g., "The module must return query results in under 2 seconds for up to 50 concurrent users").
+* Response Time: Clinical risk cross-matching and verification logic loops must complete processing in under 2 seconds under a benchmark load of 50 concurrent validation threads.
+* Data Synchronization: Cost transmission updates to the financial systems and ledger updates must achieve atomic commit sequences within 1 second of transactional clearance.
 
 ### 3.4 Logical Database Requirements
-* **Instruction:** Describe the data entities managed by your module. If you are using a shared database, specify which tables your team is responsible for. (Include ERD models in the Appendix).
+The subsystem manages structural entities including DrugItem, StockLedger, DispensingRecord, and RestockTicket. It maintains a read-only transactional dependency mapping against the external PatientProfile and ClinicalRisk entities managed within Module 1.
 
 ### 3.5 Software System Attributes
-* **Instruction:** Define the Non-Functional Requirements (NFRs) for your module:
-  * **Reliability:** [Acceptable failure rates].
-  * **Security:** [Authentication methods, data encryption protocols].
-  * **Maintainability & Portability:** [Coding standards, documentation rules].
+* Reliability: The subsystem must maintain 99.99% operational uptime. Clinical allergy check operations must achieve a 0% failure execution record.
+* Security: Access is restricted to authenticated pharmacists via Role-Based Access Control (RBAC). Patient identity schemas, clinical allergy records, and payload parameters must be encrypted using AES-256 standard protocols at rest and TLS 1.3 protocols in transit.
+* Maintainability: The solution code architecture must conform to strict N-Tier separation standards separating Data Access, Business Operations, and Web presentation components. All public interface domains require structural C# XML notation styling.
 
 ---
 
 ## 4. Appendices
 ### Appendix A: Glossary & Models
-* **Instruction:** Include any Data Flow Diagrams (DFDs), Entity-Relationship Diagrams (ERDs), or detailed UI Mockups here.
+* Entity-Relationship Diagrams :
+* 1- ERD (https://drive.google.com/file/d/1TyI8rrRpJfXZMJcAsVg8CS-2iefUVVH2/view?usp=sharing)[Entity Relationship Diagram]
+* 2- Class diagram (https://drive.google.com/file/d/1vSGnf0jOWZXRykZoZu9CGO8NCvCxL3bA/view?usp=sharing)[Class Diagram]
+* 3- Sequence diagram (https://drive.google.com/file/d/14zgPyvjjMNqEp_h8Hj1dgmm8RTGVCUIO/view?usp=drivesdk)[Sequence Diagram]
 
 ### Appendix B: GitHub Traceability Checklist
 * **Instruction for Team Members:** Before submitting this SRS, ensure that:
