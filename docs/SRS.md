@@ -77,10 +77,10 @@ The Pharmacy Logistics and Dispensing Audit Subsystem is a core module within th
 * **Instruction:** This section translates traditional functional requirements into Agile User Stories. Every feature must be traceable to the project management board.
 
 ### 3.1 External Interface Requirements
-* **Instruction:** Detail the exact data formats, API endpoints, and UI layouts needed for the interfaces mentioned in section 2.1.
+All inter-module communication payloads must use strict JSON formatted contracts. Example endpoint verification parameters:
+* POST /api/dispense/validate-clinical: Payload containing {PatientID, DrugID, Quantity}. Returns {Status: Allowed/Blocked, ConflictDetails: String}.
 
 ### 3.2 System Features & User Stories
-* **Instruction:** Organize your requirements by Feature. For each feature, write the underlying requirements as User Stories and link them to your GitHub Issues.
 
 #### 3.2.1 Feature: [Digital Identity and Clinical Risk Validation]
 * Description: Validates patient credentials and checks clinical risk parameters prior to dispensing.
