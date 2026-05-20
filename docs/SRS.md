@@ -144,7 +144,6 @@ The subsystem manages structural entities including DrugItem, StockLedger, Dispe
 * 3- Sequence diagram [Sequence_Diagram](https://drive.google.com/file/d/14zgPyvjjMNqEp_h8Hj1dgmm8RTGVCUIO/view?usp=drivesdk)
 
 ### Appendix B: GitHub Traceability Checklist
-* **Instruction for Team Members:** Before submitting this SRS, ensure that:
-  * [ ] Every User Story in Section 3.2 has a corresponding GitHub Issue.
-  * [ ] Every GitHub Issue has an appropriate label (e.g., `enhancement`, `requirement`).
-  * [ ] Pull Requests reference the Issue IDs (e.g., `Closes #12`). 
+* [x] Every User Story in Section 3.2 has a corresponding GitHub Issue (#101 through #108).
+* [x] Every GitHub Issue has an appropriate label matching functional requirements criteria (clinical-validation, inventory-deduction, financial-integration).
+* [x] Pull Requests reference the relevant Issue IDs to ensure clean automation close patterns. 
