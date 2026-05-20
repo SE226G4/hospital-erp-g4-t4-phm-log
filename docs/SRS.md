@@ -1,6 +1,6 @@
 ﻿# Software Requirements Specification (SRS)
 ## Project: [Hospital Enterprise Resource Planning (Hospital ERP) System]
-## Module/Subsystem: [Pharmacy Logistics and Dispensing Audit Subsystem (Module 4)]
+## Module/Subsystem: [Pharmacy Logistics and Dispensing Audit Subsystem (PHM-LOG)]
 **Version:** 1.0  
 **Date:** [2026-05-20]
 
@@ -8,7 +8,7 @@
 
 ## 1. Introduction
 ### 1.1 Purpose
-The purpose of this document is to specify the comprehensive functional and non-functional requirements for the Pharmacy Logistics and Dispensing Audit Subsystem (PHM-LOG). The intended audience includes software developers, database administrators, quality assurance engineers, and the hospital integration management team. For this subsystem team, this document establishes the precise behavioral logic, validation rules, and integration contracts governing safe medication dispensing.
+The purpose of this document is to specify the comprehensive functional and non-functional requirements for the Pharmacy Logistics and Dispensing Audit Subsystem (Module 4). The intended audience includes software developers, database administrators, quality assurance engineers, and the hospital integration management team. For this subsystem team, this document establishes the precise behavioral logic, validation rules, and integration contracts governing safe medication dispensing.
 
 ### 1.2 Scope
 This subsystem manages the clinical validation, real-time stock control, and audit tracking of the medication dispensing workflow. 
