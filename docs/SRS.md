@@ -143,8 +143,50 @@ The subsystem manages structural entities including DrugItem, StockLedger, Dispe
 * 2- Class diagram [Class_Diagram](https://github.com/SE226G4/hospital-erp-g4-t4-phm-log/blob/main/docs/%F0%9F%94%97%20%D8%B1%D8%A7%D8%A8%D8%B7%20%D8%A7%D9%84%D9%85%D8%AE%D8%B7%D8%B7%20%D8%A7%D9%84%D8%AA%D9%81%D8%A7%D8%B9%D9%84%D9%8A%20(Class%20Diagram).pdf)
 * 3- Sequence diagram [Sequence_Diagram](https://github.com/SE226G4/hospital-erp-g4-t4-phm-log/blob/main/docs/sequence%20diagram.pdf)
 * 4- UserStories & ActivityDiagram [UserStories+ActivityDiagram](https://github.com/SE226G4/hospital-erp-g4-t4-phm-log/blob/main/docs/%D8%A7%D9%84%20User%20Stories%2BActivityDiagram.pdf)
+* 5- Interface https://www.figma.com/design/y240OnOGveVdWi3ZaCdTvN/Untitled?node-id=0-1&t=4WfBkqtXJfzEpmnK-1
 
 ### Appendix B: GitHub Traceability Checklist
+* **Interface:**
+* 1. Patient Search Interface
+
+   Interface Name: Search for Patient and Verify Identity and Display Allergies
+
+   Related User Stories:
+   • FR1 – As a pharmacist, I want to search for the patient by their national ID number so that I can accurately identify them.
+   • FR2 – As a pharmacist, I want to view the patient's medical history to understand potential health risks before dispensing.
+   • FR3 (partially) – Display a list of allergies (Aspirin, Penicillin) in preparation for matching scientific components later.
+
+* 2. Medication Verification and Medical Conflict Interface
+
+   Interface Name: Medication Details and Check for Medical Conflicts
+
+   Related User Stories:
+   • FR3 – As a pharmacist, I want to ensure that the medication components are suitable for the patient to avoid causing them health harm.
+   • FR4 – The system should prevent the completion of the dispensing process and issue an immediate warning if there is a medical conflict (showing warning "Conflict with registered allergy – Critical").
+   • FR5 – Verify the availability of the required quantity (showing stock status: 145 available).
+   • FR11 – Prevent dispensing expired medications (not directly visible, but can be included in the verification logic).
+
+* 3. Control Panel and Daily Summary Interface
+
+   Interface Name: Control Panel – Summary of Operations and Pending Tasks
+
+   Related User Stories:
+   • FR8 – Document dispensing operations and link them to the unified medical record (showing "Operations Record" and latest dispensing requests).
+   • FR10 – Send electronic supply requests to the central warehouse when quantities are low (showing "Stock Alerts" section).
+   • FR6 – Automatically update stock (showing stock indicator in performance summary).
+
+* 4. Dispensing Confirmation and Stock Update Interface
+
+   Interface Name: Medication Dispensing Receipt – Operation Success
+
+   Related User Stories:
+   • FR6 – Automatically and immediately deduct the dispensed quantity from stock (explicit text: "Stock has been updated automatically").
+   • FR8 – Document the dispensing operation and link it to the unified medical record (dispensing operation number 9842#).
+   • FR9 – Automatically send cost data to the billing system (total cost 60.50 L.S.).
+   • FR5 – Verify quantity availability (implied since dispensing was successful).
+   • FR7 – Prevent dispensing if the quantity is insufficient (not activated here as the quantity is available).
+
+  
 * [x] Every User Story in Section 3.2 has a corresponding GitHub Issue (#101 through #108).
 * [x] Every GitHub Issue has an appropriate label matching functional requirements criteria (clinical-validation, inventory-deduction, financial-integration).
 * [x] Pull Requests reference the relevant Issue IDs to ensure clean automation close patterns. 
