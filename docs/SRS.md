@@ -139,7 +139,7 @@ The subsystem manages structural entities including DrugItem, StockLedger, Dispe
 ## 4. Appendices
 ### Appendix A: Glossary & Models
 * Entity-Relationship Diagrams :
-* 1- ERD [Entity_Relationship_Diagram]()
+* 1- ERD [Entity_Relationship_Diagram](https://github.com/SE226G4/hospital-erp-g4-t4-phm-log/blob/main/docs/%D9%88%D8%AB%D9%8A%D9%82%D8%A9%20%D8%AA%D8%B5%D9%85%D9%8A%D9%85%20%D9%82%D8%A7%D8%B9%D8%AF%D8%A9%20%D8%A7%D9%84%D8%A8%D9%8A%D8%A7%D9%86%D8%A7%D8%AA%20(ERD)%20-%20%D8%A7%D9%84%D9%88%D8%AD%D8%AF%D8%A9%20%D8%A7%D9%84%D8%B1%D8%A7%D8%A8%D8%B9%D8%A9%20(1).pdf)
 * 2- Class diagram [Class_Diagram](https://github.com/SE226G4/hospital-erp-g4-t4-phm-log/blob/main/docs/%F0%9F%94%97%20%D8%B1%D8%A7%D8%A8%D8%B7%20%D8%A7%D9%84%D9%85%D8%AE%D8%B7%D8%B7%20%D8%A7%D9%84%D8%AA%D9%81%D8%A7%D8%B9%D9%84%D9%8A%20(Class%20Diagram).pdf)
 * 3- Sequence diagram [Sequence_Diagram](https://github.com/SE226G4/hospital-erp-g4-t4-phm-log/blob/main/docs/sequence%20diagram.pdf)
 * 4- UserStories & ActivityDiagram [UserStories+ActivityDiagram](https://github.com/SE226G4/hospital-erp-g4-t4-phm-log/blob/main/docs/%D8%A7%D9%84%20User%20Stories%2BActivityDiagram.pdf)
