@@ -147,44 +147,44 @@ The subsystem manages structural entities including DrugItem, StockLedger, Dispe
 
 ### Appendix B: GitHub Traceability Checklist
 * **Interface:**
-* 1. Patient Search Interface
+*   1. Patient Search Interface
 
-   Interface Name: Search for Patient and Verify Identity and Display Allergies
+     Interface Name: Search for Patient and Verify Identity and Display Allergies
 
-   Related User Stories:
-   • FR1 – As a pharmacist, I want to search for the patient by their national ID number so that I can accurately identify them.
-   • FR2 – As a pharmacist, I want to view the patient's medical history to understand potential health risks before dispensing.
-   • FR3 (partially) – Display a list of allergies (Aspirin, Penicillin) in preparation for matching scientific components later.
+     Related User Stories:
+     • FR1 – As a pharmacist, I want to search for the patient by their national ID number so that I can accurately identify them.
+     • FR2 – As a pharmacist, I want to view the patient's medical history to understand potential health risks before dispensing.
+     • FR3 (partially) – Display a list of allergies (Aspirin, Penicillin) in preparation for matching scientific components later.
 
-* 2. Medication Verification and Medical Conflict Interface
+*   2. Medication Verification and Medical Conflict Interface
 
-   Interface Name: Medication Details and Check for Medical Conflicts
+     Interface Name: Medication Details and Check for Medical Conflicts
 
-   Related User Stories:
-   • FR3 – As a pharmacist, I want to ensure that the medication components are suitable for the patient to avoid causing them health harm.
-   • FR4 – The system should prevent the completion of the dispensing process and issue an immediate warning if there is a medical conflict (showing warning "Conflict with registered allergy – Critical").
-   • FR5 – Verify the availability of the required quantity (showing stock status: 145 available).
-   • FR11 – Prevent dispensing expired medications (not directly visible, but can be included in the verification logic).
+     Related User Stories:
+     • FR3 – As a pharmacist, I want to ensure that the medication components are suitable for the patient to avoid causing them health harm.
+     • FR4 – The system should prevent the completion of the dispensing process and issue an immediate warning if there is a medical conflict (showing warning "Conflict with registered allergy – Critical").
+     • FR5 – Verify the availability of the required quantity (showing stock status: 145 available).
+     • FR11 – Prevent dispensing expired medications (not directly visible, but can be included in the verification logic).
 
-* 3. Control Panel and Daily Summary Interface
+*   3. Control Panel and Daily Summary Interface
 
-   Interface Name: Control Panel – Summary of Operations and Pending Tasks
+     Interface Name: Control Panel – Summary of Operations and Pending Tasks
 
-   Related User Stories:
-   • FR8 – Document dispensing operations and link them to the unified medical record (showing "Operations Record" and latest dispensing requests).
-   • FR10 – Send electronic supply requests to the central warehouse when quantities are low (showing "Stock Alerts" section).
-   • FR6 – Automatically update stock (showing stock indicator in performance summary).
+     Related User Stories:
+     • FR8 – Document dispensing operations and link them to the unified medical record (showing "Operations Record" and latest dispensing requests).
+     • FR10 – Send electronic supply requests to the central warehouse when quantities are low (showing "Stock Alerts" section).
+     • FR6 – Automatically update stock (showing stock indicator in performance summary).
 
-* 4. Dispensing Confirmation and Stock Update Interface
+*   4. Dispensing Confirmation and Stock Update Interface
 
-   Interface Name: Medication Dispensing Receipt – Operation Success
+     Interface Name: Medication Dispensing Receipt – Operation Success
 
-   Related User Stories:
-   • FR6 – Automatically and immediately deduct the dispensed quantity from stock (explicit text: "Stock has been updated automatically").
-   • FR8 – Document the dispensing operation and link it to the unified medical record (dispensing operation number 9842#).
-   • FR9 – Automatically send cost data to the billing system (total cost 60.50 L.S.).
-   • FR5 – Verify quantity availability (implied since dispensing was successful).
-   • FR7 – Prevent dispensing if the quantity is insufficient (not activated here as the quantity is available).
+     Related User Stories:
+     • FR6 – Automatically and immediately deduct the dispensed quantity from stock (explicit text: "Stock has been updated automatically").
+     • FR8 – Document the dispensing operation and link it to the unified medical record (dispensing operation number 9842#).
+     • FR9 – Automatically send cost data to the billing system (total cost 60.50 L.S.).
+     • FR5 – Verify quantity availability (implied since dispensing was successful).
+     • FR7 – Prevent dispensing if the quantity is insufficient (not activated here as the quantity is available).
 
   
 * [x] Every User Story in Section 3.2 has a corresponding GitHub Issue (#101 through #108).
