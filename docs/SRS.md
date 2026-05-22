@@ -139,7 +139,7 @@ The subsystem manages structural entities including DrugItem, StockLedger, Dispe
 ## 4. Appendices
 ### Appendix A: Glossary & Models
 * Entity-Relationship Diagrams :
-* 1- ERD [Entity_Relationship_Diagram](https://drive.google.com/file/d/1TyI8rrRpJfXZMJcAsVg8CS-2iefUVVH2/view?usp=sharing)
+* 1- ERD [Entity_Relationship_Diagram]([https://drive.google.com/file/d/1TyI8rrRpJfXZMJcAsVg8CS-2iefUVVH2/view?usp=sharing](https://github.com/SE226G4/hospital-erp-g4-t4-phm-log/blob/main/docs/%D9%88%D8%AB%D9%8A%D9%82%D8%A9%20%D8%AA%D8%B5%D9%85%D9%8A%D9%85%20%D9%82%D8%A7%D8%B9%D8%AF%D8%A9%20%D8%A7%D9%84%D8%A8%D9%8A%D8%A7%D9%86%D8%A7%D8%AA%20(ERD)%20-%20%D8%A7%D9%84%D9%88%D8%AD%D8%AF%D8%A9%20%D8%A7%D9%84%D8%B1%D8%A7%D8%A8%D8%B9%D8%A9%20(1).pdf))
 * 2- Class diagram [Class_Diagram](https://drive.google.com/file/d/1vSGnf0jOWZXRykZoZu9CGO8NCvCxL3bA/view?usp=sharing)
 * 3- Sequence diagram [Sequence_Diagram](https://drive.google.com/file/d/14zgPyvjjMNqEp_h8Hj1dgmm8RTGVCUIO/view?usp=drivesdk)
 * 4- UseCase Diagram [UseCase_Diagram](https://drive.google.com/file/d/1iP0OeoImrvcAbfynnFjGfS3f3qDuGUEE/view?usp=drivesdk)
