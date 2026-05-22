@@ -147,7 +147,7 @@ The subsystem manages structural entities including DrugItem, StockLedger, Dispe
 
 ### Appendix B: GitHub Traceability Checklist
 * **Interface:**
-*   1. Patient Search Interface
+  * 1- Patient Search Interface
 
      Interface Name: Search for Patient and Verify Identity and Display Allergies
 
@@ -156,7 +156,7 @@ The subsystem manages structural entities including DrugItem, StockLedger, Dispe
      • FR2 – As a pharmacist, I want to view the patient's medical history to understand potential health risks before dispensing.
      • FR3 (partially) – Display a list of allergies (Aspirin, Penicillin) in preparation for matching scientific components later.
 
-*   2. Medication Verification and Medical Conflict Interface
+  * 2- Medication Verification and Medical Conflict Interface
 
      Interface Name: Medication Details and Check for Medical Conflicts
 
@@ -166,7 +166,7 @@ The subsystem manages structural entities including DrugItem, StockLedger, Dispe
      • FR5 – Verify the availability of the required quantity (showing stock status: 145 available).
      • FR11 – Prevent dispensing expired medications (not directly visible, but can be included in the verification logic).
 
-*   3. Control Panel and Daily Summary Interface
+  * 3- Control Panel and Daily Summary Interface
 
      Interface Name: Control Panel – Summary of Operations and Pending Tasks
 
@@ -175,7 +175,7 @@ The subsystem manages structural entities including DrugItem, StockLedger, Dispe
      • FR10 – Send electronic supply requests to the central warehouse when quantities are low (showing "Stock Alerts" section).
      • FR6 – Automatically update stock (showing stock indicator in performance summary).
 
-*   4. Dispensing Confirmation and Stock Update Interface
+  * 4- Dispensing Confirmation and Stock Update Interface
 
      Interface Name: Medication Dispensing Receipt – Operation Success
 
