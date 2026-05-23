@@ -1,7 +1,7 @@
 # Database Schema
 
 ## 1. Entity-Relationship Diagram (ERD)
-(ERD4.png)[ERD Diageam]
+(ERD4.png)[ERD Diageam]!
 
 ## 2. Tables List
 *List the main tables in your database. (Note: Patients and Risk_Profiles are managed by Module 1, we only reference them).*
