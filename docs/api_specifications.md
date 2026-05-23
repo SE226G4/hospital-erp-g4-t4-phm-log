@@ -24,11 +24,11 @@ Provides medication dispensing services, patient safety verification (against al
 * What it does: Sends an automated restock request to the Inventory & Supplies module when a medication's stock quantity falls to the minimum alert level.
 * Required Data: `medication_id`, `medication_name`, `current_stock`, `requested_quantity`
 * Returned Data: `restock_request_id`, `request_status`
-*(لا يوجد تعديل هنا لأنه لا يتعلق بهوية المريض)*
+
 
 ### Endpoint 4: Verify Patient Risk Profile
 * Method: `GET` (Internal call to Module 1 API)
 * What it does: Fetches the patient's critical medical history specifically from the **`Risk_Profiles`** table *(Modified)* in the Admission module to verify safety before dispensing any medication.
-* Required Data: **`national_id`** *(Modified - تم الحذف والاكتفاء بالرقم الوطني لأنه المفتاح الأساسي)*
+* Required Data: **`national_id`**
 * Returned Data: `allergies` (List), `chronic_diseases` (List), `blood_type`
 
