@@ -144,6 +144,7 @@ The subsystem manages structural entities including DrugItem, StockLedger, Dispe
 * 3- Sequence diagram [Sequence_Diagram](https://github.com/SE226G4/hospital-erp-g4-t4-phm-log/blob/main/docs/sequence%20diagram.pdf)
 * 4- UserStories & ActivityDiagram [UserStories+ActivityDiagram](https://github.com/SE226G4/hospital-erp-g4-t4-phm-log/blob/main/docs/%D8%A7%D9%84%20User%20Stories%2BActivityDiagram.pdf)
 * 5- Interface https://www.figma.com/design/y240OnOGveVdWi3ZaCdTvN/Untitled?node-id=0-1&t=4WfBkqtXJfzEpmnK-1
+* 6- Functional Requirements [Functional_Requirements](https://github.com/SE226G4/hospital-erp-g4-t4-phm-log/blob/main/docs/Functional%20Requirements.pdf)
 
 ### Appendix B: GitHub Traceability Checklist
 * **Interface:**
